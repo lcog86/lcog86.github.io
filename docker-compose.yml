@@ -1,0 +1,17 @@
+version: "3.8"
+
+services:
+  jekyll:
+    build: .
+    # Expose Jekyll server port
+    ports:
+      - "4000:4000"
+      - "35729:35729"
+    # Volumes can be added to persist data and configuration
+    volumes:
+      - ./:/app
+
+# Adjust the volumes section to map your local Jekyll project folder to the /app directory within the container.
+# This allows for live updates to your website without rebuilding the image every time.
+
+# Additional configurations can be added, like environment variables, networks, etc.
